@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="midia/favicon.ico" type="image/x-icon">
+    <title>Lista de Pedidos</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de Pedidos</h1>
+        <div>
+            <h1>Valor Total: <span class="total">R$00.00</span></h1>
+            <img src="midia/add.png" alt="adicionar" class="add">
+        </div>
+    </header>
+    <main>
+        <section class="lista">
+        <h1>LISTA</h1>
+        <article class="pedido">
+            <div class="identificacao">
+                <h1>Nome</h1>
+                <h3>Descriçao</h3>
+            </div>
+            <div class="identificacao-pedido">
+                <h2>Valor</h2>
+                <h2>Itens</h2>
+            </div>
+        </article>
+        </section>
+    </main>
+    <div class="adicionar">
+        <form autocomplete="on" method="post">
+            <img src="midia/sair.png" alt="sair" class="sair">
+            <p>
+                <label for="nome"><span style="color: red;">*</span>Nome: </label><br>
+                <input type="text" placeholder="Nome" id="nome" required maxlength="20">
+            </p>
+            <p>
+                <label for="descricao"><span style="color: red;">*</span>Descrição: </label><br>
+                <input type="text" placeholder="Especificação dessa pessoa" id="descricao" required maxlength="20">
+            </p>
+            <p>
+                <label for="valor"><span style="color: red;">*</span>Valor:</label><br>
+                <input type="number" value="3.00" id="valor" required min="3" >
+            </p>
+            <p>
+                <label for="itens"><span style="color: red;">*</span>Itens:</label><br>
+                <input type="text" placeholder="oque a pessoa pedio" id="itens" required maxlength="200">
+            </p>
+            <input type="button" value="Adicionar" class="enviar">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

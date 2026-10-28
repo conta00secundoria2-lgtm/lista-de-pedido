@@ -1,0 +1,521 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    background-color: #f8fafc;
+}
+
+body {
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition:
+        background-color 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 12px 28px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 3px 12px #00000008;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header span {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+
+    color: #15803d;
+    background-color: #dcfce7;
+    font-weight: bold;
+}
+
+header img {
+    display: block;
+    width: 52px;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+header img:hover {
+    background-color: #f3f4f6;
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: 30px 24px;
+}
+
+main > h1 {
+    margin: 0 0 25px;
+    text-align: left;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #111827;
+}
+
+/* =========================
+   BOTÃO DE ADICIONAR
+========================= */
+
+.add {
+    border: none;
+    border-radius: 12px;
+    padding: 13px 20px;
+
+    background-color: #16a34a;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 10px #16a34a25;
+}
+
+.add:hover {
+    background-color: #15803d;
+    transform: translateY(-2px);
+}
+
+.add:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   LISTA DE PEDIDOS
+========================= */
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+    min-height: 200px;
+    margin-top: 24px;
+    padding: 24px;
+
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+}
+
+.lista > h1 {
+    margin: 0 0 6px;
+    color: #111827;
+    font-size: 1.5rem;
+}
+
+/* =========================
+   CARTÃO DE CADA PEDIDO
+========================= */
+
+.pedido {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 100%;
+    margin: 0;
+    padding: 22px;
+
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-left: 5px solid #94a3b8;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 12px #00000008;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        border-color 0.2s;
+}
+
+.pedido:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px #0000000c;
+}
+
+/* Nome e descrição */
+
+div.identificacao {
+    flex: 1 1 200px;
+    min-width: 0;
+    margin: 0;
+}
+
+.identificacao h1 {
+    margin: 0 0 8px;
+    color: #111827;
+    font-size: 1.2rem;
+    overflow-wrap: anywhere;
+}
+
+.identificacao h3 {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: normal;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* Valor e quantidade */
+
+.identificacao-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.identificacao-pedido h2 {
+    margin: 0;
+    color: #15803d;
+    font-size: 1rem;
+}
+
+.identificacao-pedido h2 + h2 {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Pedido pago */
+
+.pedido.esta-pago {
+    border-left-color: #22c55e;
+}
+
+/* Pedido preparado */
+
+.pedido.esta-feito {
+    background-color: #f0fdf4;
+}
+
+/* =========================
+   BOTÕES DE AÇÃO DOS PEDIDOS
+========================= */
+
+.acoes-pedido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    width: 100%;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.status-btn,
+.excluir-btn {
+    min-height: 40px;
+    padding: 10px 14px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.status-btn {
+    color: #475569;
+    background-color: #f1f5f9;
+    border-color: #e2e8f0;
+}
+
+.status-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.excluir-btn {
+    margin-left: auto;
+    color: #b91c1c;
+    background-color: #fef2f2;
+    border-color: #fecaca;
+}
+
+.excluir-btn:hover {
+    background-color: #fee2e2;
+}
+
+/* =========================
+   LISTA VAZIA
+========================= */
+
+.lista-vazia {
+    margin: 0;
+    padding: 35px 20px;
+
+    text-align: center;
+    color: #64748b;
+    background-color: #ffffff;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+}
+
+/* =========================
+   FORMULÁRIO DE ADIÇÃO
+========================= */
+
+.adicionar {
+    display: none;
+
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    padding: 30px 20px;
+    background-color: #00000070;
+
+    align-items: center;
+    justify-content: center;
+}
+
+/* Funciona com a classe aberta usada no JavaScript */
+
+.adicionar.aberto {
+    display: flex;
+}
+
+.adicionar form {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: min(520px, 100%);
+    margin: auto;
+    padding: 32px;
+
+    font-size: 1rem;
+    color: #1f2937;
+    background-color: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px #00000030;
+}
+
+.adicionar form h1 {
+    margin: 0 0 10px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.adicionar label {
+    width: 100%;
+    text-align: left;
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.adicionar input:not(.enviar) {
+    width: 100%;
+    height: 46px;
+    padding: 0 13px;
+
+    color: #111827;
+    background-color: #f9fafb;
+
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+
+    font-size: 1rem;
+    outline: none;
+}
+
+.adicionar input:not(.enviar):focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px #16a34a20;
+    background-color: #ffffff;
+}
+
+.adicionar .enviar {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 12px;
+    padding: 10px;
+
+    color: #ffffff;
+    background-color: #16a34a;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.adicionar .enviar:hover {
+    background-color: #15803d;
+}
+
+/* Botão de fechar */
+
+.adicionar .sair {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    left: auto;
+
+    width: 38px;
+    min-width: 0;
+    height: 38px;
+    margin: 0;
+
+    color: #475569;
+    background-color: #f1f5f9;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 1.2rem;
+}
+
+.adicionar .sair:hover {
+    color: #b91c1c;
+    background-color: #fee2e2;
+}
+
+/* =========================
+   CAMPOS E ACESSIBILIDADE
+========================= */
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #86efac;
+    outline-offset: 3px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 700px) {
+    header {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    header div {
+        gap: 10px;
+    }
+
+    header img {
+        width: 42px;
+    }
+
+    main {
+        padding: 24px 14px;
+    }
+
+    .lista {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .pedido {
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .identificacao-pedido {
+        flex: 1 1 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .acoes-pedido > button {
+        flex: 1 1 140px;
+    }
+
+    .excluir-btn {
+        margin-left: 0;
+    }
+
+    .adicionar {
+        padding: 16px;
+    }
+
+    .adicionar form {
+        padding: 28px 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header span {
+        font-size: 0.85rem;
+    }
+
+    .acoes-pedido {
+        flex-direction: column;
+    }
+
+    .acoes-pedido > button {
+        width: 100%;
+    }
+}
