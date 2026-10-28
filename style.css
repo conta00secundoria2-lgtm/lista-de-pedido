@@ -456,6 +456,11 @@ input:focus-visible {
         gap: 12px;
     }
 
+    .add{
+        width: 25px;
+        height: 25px;
+    }
+
     header div {
         gap: 10px;
     }
